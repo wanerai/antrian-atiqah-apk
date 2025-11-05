@@ -1,0 +1,21 @@
+{
+  "name": "Antrian Klinik Atiqah Medical",
+  "short_name": "Antrian Atiqah",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#ffffff",
+  "theme_color": "#1a252f",
+  "description": "Aplikasi antrian offline untuk Klinik Atiqah Medical.",
+  "icons": [
+    {
+      "src": "img/256px.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/512px.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+header {
+    background-color: #1a252f;
+    color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
+.logo-text h1 {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo-text p {
+    font-family: 'Roboto', sans-serif;
+    margin: 4px 0 0 0;
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.display-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-box span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: #34495e;
+    text-transform: uppercase;
+}
+
+.number-display {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    background-color: #fff;
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 3px solid #e74c3c;
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+    margin-top: 10px;
+}
+
+.main-button {
+    width: 80%;
+    max-width: 400px;
+    height: 180px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(39, 174, 96, 0.5);
+}
+
+.main-button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Gaya Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 25px;
+    border: none;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #1a252f;
+    font-family: 'Oswald', sans-serif;
+}
+
+.close, .close-settings, .close-preview, .close-password {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.close:hover, .close-settings:hover, .close-preview:hover, .close-password:hover,
+.close:focus, .close-settings:focus, .close-preview:focus, .close-password:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.preview-container {
+    background-color: #fff;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    margin-top: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preview-header { font-weight: bold; }
+.preview-number { font-size: 24px; font-weight: bold; margin: 10px 0; }
+.preview-footer { font-size: 11px; margin-top: 10px; }
+
+/* --- Gaya untuk Pengaturan --- */
+.settings-btn {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.settings-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+.settings-content { max-width: 380px; }
+
+.controls {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.controls button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: none;
+    background-color: #ffffff;
+    color: #1a252f;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+    width: 80%;
+    max-width: 250px;
+}
+.controls button:hover { background-color: #f0f2f5; transform: translateY(-2px); }
+
+#statusPrinter {
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    color: #c0392b;
+    margin: 0;
+    font-weight: 500;
+}
+
+.settings-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+.setting-item label { cursor: pointer; color: #555; }
+.setting-item input[type="checkbox"] { cursor: pointer; width: 20px; height: 20px; }
+
+/* Gaya untuk tombol sekunder (Ubah Password, Batal) */
+.control-button-secondary {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: 1px solid #3498db;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    transition: all 0.2s ease;
+    width: 80%;
+    max-width: 250px;
+    margin: 10px auto;
+}
+.control-button-secondary:hover { background-color: #2980b9; transform: translateY(-2px); }
+
+/* Gaya Modal Password */
+.password-content { max-width: 400px; }
+.password-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.form-group { display: flex; flex-direction: column; text-align: left; }
+.form-group label {
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #555;
+}
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.password-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Kelas untuk menyembunyikan elemen */
+.hidden { display: none !important; }
